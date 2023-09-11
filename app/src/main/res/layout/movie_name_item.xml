@@ -5,17 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/Movie_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:text="Title"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+<!--
+
+    <TextView
+        android:id="@+id/pageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="PopularMovies "
+        android:textStyle="bold"/>
+-->
+
+ <!--   <TextView
+        android:id="@+id/pageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Page: "
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/resultsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Results: "
+        app:layout_constraintTop_toBottomOf="@id/pageTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/totalPagesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultsTextView"
+        android:text="Total Pages: "
+        android:textStyle="bold"/>-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ChildAdapter"
         android:layout_width="match_parent"
@@ -24,6 +52,6 @@
         android:orientation="horizontal"
         tools:itemCount="5"
         tools:listitem="@layout/movie_poster"
-        app:layout_constraintTop_toBottomOf="@id/Movie_title" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.vasyerp.nestedrecyclerview.MovieDto.MovieDTO
+import com.vasyerp.nestedrecyclerview.MovieDto.PopularMovies
+import com.vasyerp.nestedrecyclerview.MovieDto.ResultsDto
 import com.vasyerp.nestedrecyclerview.R
 
 
-class MovieListAdapter(var context: Context, private val mlist: ArrayList<MovieDTO>) :
+class MovieListAdapter(var context: Context, private val mlist: ArrayList<PopularMovies<ResultsDto>>) :
     RecyclerView.Adapter<MovieListAdapter.mViewHolder>() {
     class mViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
-        var titleName = itemview.findViewById<TextView>(R.id.Movie_title)
         val childApa = itemview.findViewById<RecyclerView>(R.id.ChildAdapter)
 
     }
@@ -30,8 +31,7 @@ class MovieListAdapter(var context: Context, private val mlist: ArrayList<MovieD
 
     override fun onBindViewHolder(holder: mViewHolder, position: Int) {
         val itemModel = mlist[position]
-        holder.titleName.text = itemModel.Title
-        val childAdapter = ChildAdapter(context, itemModel.Pos)
+        val childAdapter = ChildAdapter(context, itemModel.results)
         holder.childApa.adapter = childAdapter
 
     }
